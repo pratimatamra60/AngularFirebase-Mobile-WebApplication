@@ -6,6 +6,20 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- for having an app icon on mobile -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" sizes="128x128" href="img/nysl_logo.png">
+   <link rel="shortcut icon" sizes="196x196" href="img/nysl_logo.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/nysl_logo.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/nysl_logo.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/nysl_logo.png">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- bootstrap -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -16,6 +30,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <app-root></app-root>  
-</body>
+  <app-root></app-root>
+
+  <script>
+      function openNav() {
+        document.getElementById("mySidenav").classList.remove("hide")
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").classList.add("hide")
+
+        // document.getElementById("mySidenav").style.width = "0";
+      }
+
+      function hide() {
+        /* if(screen.width < 768)
+        {
+          var element = document.getElementById("collapseNav");
+          element.classList.remove("navbar-collapse","collapse");
+        }
+        else if (screen.width > 768){
+          var element = document.getElementById("mySidenav")
+          element.classList.remove("sidenav")
+        } */
+      }
+   </script>
+
+<!--   <script type="text/javascript" src="./app/js/main.js"></script>
+ --></body>
 </html>

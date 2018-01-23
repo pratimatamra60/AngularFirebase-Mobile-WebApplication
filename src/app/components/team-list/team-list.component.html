@@ -1,3 +1,18 @@
-<p>
-  team-list works!
-</p>
+<div class="container" data-ng-app="nyslApp">
+    <h3 class="text-center" ><strong>Team List</strong></h3>
+    <hr>
+    <div *ngFor="let team of teams; let i = index">
+      <!-- ################TABLE################# -->
+      <div class="row row-height">
+        <div class="col">
+          <p>{{team.name}}</p>
+        </div>
+        <div class="col">
+          <p><img src="{{team.logo}}" alt="logo" class="team-logo" ></p>
+        </div>
+        <div class="col">
+            <a [routerLink]="['/team-detail', i]"><button class="btn btn-primary">details</button></a>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '../../services/team.service';
+
 
 @Component({
   selector: 'app-stat-table',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatTableComponent implements OnInit {
 
-  constructor() { }
+  teams = [];
+  constructor(private _teamService: TeamService) { }
 
   ngOnInit() {
+    this.teams = this._teamService.getTeams();
   }
-
 }

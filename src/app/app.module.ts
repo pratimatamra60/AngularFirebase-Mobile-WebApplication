@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
+import { HttpModule } from '@angular/http';
+
 
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthService } from './services/auth.service';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,6 +21,10 @@ import { StatTableComponent } from './components/stat-table/stat-table.component
 import { SettingsComponent } from './components/settings/settings.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsComponent } from './components/news/news.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 @NgModule({
@@ -28,16 +37,22 @@ import { NewsComponent } from './components/news/news.component';
     TeamListComponent,
     StatTableComponent,
     SettingsComponent,
-    HomeComponent
+    HomeComponent,
+    LoginPageComponent,
+    TeamDetailComponent,
+    FavouriteComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    routing
+    routing,
+    HttpModule
+
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

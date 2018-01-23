@@ -1,3 +1,25 @@
-<p>
-  stat-table works!
-</p>
+<div class="container">
+    <h3 class="text-center" ><strong>Statistics</strong></h3>
+    <div>
+      <!-- ################TABLE################# -->
+      <table id="teamsTable" class="table stat-tbl table-striped">
+
+          <tbody>
+            <tr>
+              <th></th>
+              <th>Team</th>
+              <th>Pos</th>
+              <th>wins</th>
+              <th>Games</th>
+            </tr>
+            <tr *ngFor="let team of teams">
+              <td><img src="{{team.logo}}" alt="logo" class="team-logo"></td>
+              <td>{{team.name}}</td>
+              <td>{{team.position}}</td>
+              <td>{{team.wins}}</td>
+              <td>{{team.games_played}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+</div>
