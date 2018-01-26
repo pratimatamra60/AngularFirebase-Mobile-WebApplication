@@ -1,0 +1,21 @@
+<div>
+  <div class="modal-content">
+    <div class="container">
+      <h3>New User Register</h3>
+      <p>Please fill in this form to Register.</p>
+      <hr>
+
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" [(ngModel)] ="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="pw" required>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button class="signupbtn" (click)="signup()">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

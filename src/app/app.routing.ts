@@ -13,11 +13,13 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { RegisterComponent } from './components/register/register.component';
 
  const APP_ROUTES: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login-page', component: LoginPageComponent },
+  { path: 'register', component: RegisterComponent },
 
   { path: 'news', component: NewsComponent },
   { path: 'contact', component: ContactComponent },

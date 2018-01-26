@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 
 import { environment } from './../environments/environment';
@@ -25,6 +26,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     LoginPageComponent,
     TeamDetailComponent,
     FavouriteComponent,
-    GalleryComponent
+    GalleryComponent,
+    RegisterComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     routing,
-    HttpModule
+    HttpModule,
+    FormsModule
 
   ],
   providers: [AuthService],

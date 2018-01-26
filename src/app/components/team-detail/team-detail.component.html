@@ -1,12 +1,12 @@
 <div class="container">
-    <h2 class="text-center">{{name}}</h2>
+    <h2 class="text-center">{{team.name}}</h2>
     <div class="card" >
-      <img class="card-img-top team-logo" src="{{logo}}" alt="Card image">
+      <img class="card-img-top team-logo" src="{{team.logo}}" alt="Card image">
       <div class="card-body team-card">
         <h3 class="card-text">Team Detail</h3>
-        <p><strong>Wins : </strong> {{wins}}</p>
-        <p><strong>Loses: </strong> {{loses}}</p>
-        <p><strong>Coach: </strong> {{coach}}</p>
+        <p><strong>Wins : </strong> {{team.wins}}</p>
+        <p><strong>Loses: </strong> {{team.loses}}</p>
+        <p><strong>Coach: </strong> {{team.coach}}</p>
         <a [routerLink]="['/team-list']"><button class="btn btn-primary text-center">back</button></a>
 
       </div>

@@ -8,21 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./team-detail.component.scss']
 })
 export class TeamDetailComponent implements OnInit {
-name = '';
-coach = '';
-wins = '';
-logo = '';
-loses = '';
+
+team;
 
   constructor( private activatedRoute: ActivatedRoute, private _teamService: TeamService) {
-    team = {};
+    this.team = {
+      name : 'hello',
+      logo : '',
+      coach : '',
+      wins : '',
+      loses : ''
+
+    };
     this.activatedRoute.params.subscribe(params => {
       this.team = this._teamService.getTeam(params['id']);
-      this.name = this.team.name;
-      this.coach = team.coach;
-      this.wins = team.wins;
-      this.logo = team.logo;
-      this.loses = team.loses;
       console.log(this.team);
     });
   }

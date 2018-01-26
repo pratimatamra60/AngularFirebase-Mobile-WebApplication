@@ -10,27 +10,23 @@ import { Router } from '@angular/router';
   providers: [TeamService]
 })
 export class AppComponent {
-  private isLoggedIn: Boolean;
-  private user_displayName: String;
-  private use_email: String;
+  public isLoggedIn: Boolean;
+  public user_displayName: String;
+  public use_email: String;
 
   constructor(public authService: AuthService, private router: Router) {
-     this.authService.afAuth.auth.subscribe {
-       (auth) => {
-        if (auth == null) {
-          //not logged in
-          this.isLoggedIn = false;
-          this.user_displayName = '';
-          this.use_email = '';
-          this.router.navigate(['login-page']);
-        } else {
-          this.isLoggedIn = true;
-          this.user_displayName = auth.google.displayName;
-          this.use_email = auth.google.email;
-          this.router.navigate(['']);
-        }
+    this.authService.afAuth.authState.subscribe( user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+        this.user_displayName = '';
+        this.use_email = '';
+        // this.router.navigate(['login-page']);
+      } else {
+        this.isLoggedIn = true;
+        this.user_displayName = user.displayName;
+        this.use_email = user.email;
+        // this.router.navigate(['home']);
       }
-    }
+    });
   }
-
-
+}
