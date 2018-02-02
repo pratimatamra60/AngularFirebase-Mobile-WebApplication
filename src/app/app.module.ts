@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 
+
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -27,7 +28,8 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ChatComponent } from './components/chat/chat.component';
+import { AuthGuard } from './services/auth.guard';
+import { PostMessageComponent } from './components/post-message/post-message.component';
 
 
 @NgModule({
@@ -46,7 +48,7 @@ import { ChatComponent } from './components/chat/chat.component';
     FavouriteComponent,
     GalleryComponent,
     RegisterComponent,
-    ChatComponent
+    PostMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,7 @@ import { ChatComponent } from './components/chat/chat.component';
     FormsModule
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

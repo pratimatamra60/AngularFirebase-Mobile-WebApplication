@@ -20,12 +20,8 @@ export class AppComponent {
         this.isLoggedIn = false;
         this.user_displayName = '';
         this.use_email = '';
-        // this.router.navigate(['login-page']);
       } else {
         this.isLoggedIn = true;
-        this.user_displayName = user.displayName;
-        this.use_email = user.email;
-        // this.router.navigate(['home']);
       }
     });
   }

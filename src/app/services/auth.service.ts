@@ -14,27 +14,35 @@ import 'rxjs/add/operator/switchMap';
 
 export class AuthService {
 error = null;
+isLoggedIn = false;
   constructor(public afAuth: AngularFireAuth,
     private router: Router ) {
       // checking the user login state
-    this.afAuth.authState.subscribe( user => {
-      // if logged in go to the home page
-      if ( user ) {
-        this.router.navigate(['home']);
-      }
-    });
+      this.afAuth.authState.subscribe( user => {
+        // if loggedin go to the home page
+        if ( user ) {
+          this.router.navigate(['home']);
+          this.isLoggedIn = true;
+        } else {
+          this.isLoggedIn = false;
+        }
+      });
+  }
+
+  isLoggedin() {
+    return this.isLoggedIn;
   }
 
   loginWith(service: string) {
     switch (service) {
       case 'google':
-      return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      return this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
       case 'facebook':
-      return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+      return this.afAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider());
       case 'register':
-      return this.router.navigate(['register']);
+      return this.router.navigate(['/register']);
       case 'without-login':
-      return this.router.navigate(['home']);
+      return this.router.navigate(['/home']);
   }
 
 }

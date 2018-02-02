@@ -1,3 +1,7 @@
+
+
+
+
 function openNav() {
   document.getElementById("mySidenav").classList.remove("hide")
 }

@@ -1,11 +1,7 @@
 <div class="container">
     <router-outlet></router-outlet>
  <div *ngIf="isLoggedIn">
-
-    <p>Logged In: {{ user_displayName }} {{use_email}}</p>
-   </div>
-   <div *ngIf="!isLoggedIn">
-      <p>Logged Out</p>
-   </div>
+    <app-navbar></app-navbar>
+ </div>
 </div>
 

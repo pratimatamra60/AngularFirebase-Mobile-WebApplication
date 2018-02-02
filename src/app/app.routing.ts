@@ -14,13 +14,16 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './services/auth.guard';
+import { PostMessageComponent } from './components/post-message/post-message.component';
+
 
  const APP_ROUTES: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login-page', component: LoginPageComponent },
+  { path: '', redirectTo: '/login-page', pathMatch: 'full' },
+  { path: 'post-message', component: PostMessageComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent},
+  { path: 'login-page', component: LoginPageComponent},
   { path: 'register', component: RegisterComponent },
-
   { path: 'news', component: NewsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'match-list', component: MatchListComponent },

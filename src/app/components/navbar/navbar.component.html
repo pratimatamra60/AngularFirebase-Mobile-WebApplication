@@ -8,28 +8,35 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['home']"><span onclick="closeNav()">Home</span><span  class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/home']"><span onclick="closeNav()">Home</span><span  class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['news']"> <span onclick="closeNav()">News</span> </a>
+          <a class="nav-link" [routerLink]="['/news']"> <span onclick="closeNav()">News</span> </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['stat-table']"><span onclick="closeNav()">Statics</span></a>
+          <a class="nav-link" [routerLink]="['/stat-table']"><span onclick="closeNav()">Statics</span></a>
         </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['gallery']"><span onclick="closeNav()">Gallery</span></a>
+          <a class="nav-link" [routerLink]="['/gallery']"><span onclick="closeNav()">Gallery</span></a>
         </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['contact']"><span onclick="closeNav()">Contact</span></a>
+          <a class="nav-link" [routerLink]="['/contact']"><span onclick="closeNav()">Contact</span></a>
         </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['settings']"><span onclick="closeNav()">Settings</span></a>
+          <a class="nav-link" [routerLink]="['/settings']"><span onclick="closeNav()">Settings</span></a>
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <div class ="login" *ngIf="isLoggedIn">
+        <p>{{ user_displayName }}</p>
+        <button (click)="logout()">Logout</button>
+    </div>
+    <div class ="login" *ngIf="!isLoggedIn">
+          <button><a [routerLink]="['/login-page']">Login</a></button>
+    </div>
   </div>
 
 </nav>
@@ -37,8 +44,9 @@
 
 <nav class="navbar-bottom icon-bar navbar-expand-lg navbar fixed-bottom">
       <a class = "active" [routerLink]="['home']"><i class="fa fa-home"></i></a>
-      <a [routerLink]="['favourite']"><i class="fa fa-star"></i></a>
-      <a [routerLink]="['match-list']"><i class="fa fa-calendar"></i></a>
-      <a [routerLink]="['team-list']"><i class="fa fa-group"></i></a>
+      <a [routerLink]="['/favourite']"><i class="fa fa-star"></i></a>
+      <a [routerLink]="['/match-list']"><i class="fa fa-calendar"></i></a>
+      <a [routerLink]="['/team-list']"><i class="fa fa-group"></i></a>
+      <a onclick="alert('please login')" [routerLink]="['/post-message']"><i class="fa fa-comments"></i></a>
 </nav>
 
